@@ -32,5 +32,12 @@ public class Util {
         context.addMessage(null, msg);
     }
     
+    public static void mensagemInformacao(String mensagem) {
+        FacesContext contexto = FacesContext.getCurrentInstance();
+        contexto.getExternalContext().getFlash().setKeepMessages(true);
+        FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, mensagem, "");
+        contexto.addMessage(null, msg);               
+    }
+     
     
 }
